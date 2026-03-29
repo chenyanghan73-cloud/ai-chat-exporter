@@ -1,0 +1,10 @@
+用户: 我准备把现在的 AI 聊天记录保存下来，之后换账号还能继续用。
+助手: 可以，我们把关键聊天整理成 PDF 和 Markdown，这样既方便归档，也方便重新喂给新的模型。
+
+用户: 如果里面有代码片段，也能保留排版吗？
+助手: 可以，像这样写：
+
+```python
+def summarize_chat(messages):
+    return "\n".join(messages)
+```

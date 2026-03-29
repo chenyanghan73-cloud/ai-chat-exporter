@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>打印预览</title>
+    <link rel="stylesheet" href="preview.css">
+  </head>
+  <body>
+    <header class="toolbar no-print">
+      <div class="toolbar-copy">
+        <div class="eyebrow">Print Preview</div>
+        <h1 id="toolbar-title">AI Chat Exporter</h1>
+        <p>这里会自动渲染抓取到的当前会话，并唤起浏览器打印。</p>
+      </div>
+      <div class="toolbar-actions">
+        <button id="print-button" class="primary">打印 / 另存为 PDF</button>
+        <button id="markdown-button">下载 Markdown</button>
+        <button id="json-button">下载 JSON</button>
+      </div>
+    </header>
+
+    <main id="page" class="page">
+      <section id="empty-state" class="empty-state">
+        正在载入会话内容...
+      </section>
+    </main>
+
+    <script type="module" src="preview.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Chat Exporter</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div class="eyebrow">Browser Extension</div>
+        <h1>AI Chat Exporter</h1>
+        <p>在 ChatGPT / Claude 页面一键抓取当前会话，打印为 PDF，或下载 Markdown / JSON。</p>
+      </section>
+
+      <section class="status-card">
+        <div class="status-top">
+          <span id="site-badge" class="badge">检测中</span>
+          <span id="page-hint" class="hint">请切到聊天页面后再点击按钮</span>
+        </div>
+        <h2 id="conversation-title">等待抓取当前会话</h2>
+        <p id="conversation-meta" class="meta">支持 ChatGPT / Claude，其他页面会尝试通用抓取。</p>
+      </section>
+
+      <section class="actions">
+        <button id="print-button" class="primary">打印为 PDF</button>
+        <button id="markdown-button">下载 Markdown</button>
+        <button id="json-button">下载 JSON</button>
+        <button id="copy-button">复制纯文本</button>
+      </section>
+
+      <section id="result-box" class="result-box" aria-live="polite">
+        准备就绪。
+      </section>
+
+      <section class="footnote">
+        <strong>说明：</strong> 出于浏览器安全限制，扩展无法静默保存 PDF。
+        点击“打印为 PDF”后会打开打印页，并自动唤起打印；最后一步需要你在浏览器里选择“另存为 PDF”。
+      </section>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

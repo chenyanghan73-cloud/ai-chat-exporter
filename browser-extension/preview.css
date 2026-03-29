@@ -1,0 +1,247 @@
+:root {
+  --ink: #10203a;
+  --muted: #59677d;
+  --line: #d8e1ec;
+  --paper: #ffffff;
+  --page: #edf3f9;
+  --user-bg: #e0f2fe;
+  --assistant-bg: #ecfccb;
+  --system-bg: #fee2e2;
+  --tool-bg: #ede9fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei UI", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(17, 94, 89, 0.1), transparent 28%),
+    linear-gradient(180deg, #f6fbff 0%, var(--page) 100%);
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(216, 225, 236, 0.9);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(17, 94, 89, 0.12);
+  color: #115e59;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toolbar h1 {
+  margin: 10px 0 8px;
+  font-size: 26px;
+}
+
+.toolbar p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+button {
+  appearance: none;
+  border: 1px solid rgba(216, 225, 236, 0.92);
+  border-radius: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+button.primary {
+  color: #effffb;
+  border-color: transparent;
+  background: linear-gradient(135deg, #0f766e 0%, #155e75 100%);
+}
+
+.page {
+  max-width: 920px;
+  margin: 28px auto 40px;
+  padding: 0 20px;
+}
+
+.paper {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 28px 60px rgba(16, 32, 58, 0.1);
+  padding: 28px;
+}
+
+.header {
+  padding-bottom: 16px;
+  border-bottom: 2px solid #10203a;
+}
+
+.header h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f8fbff;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.message {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  page-break-inside: avoid;
+}
+
+.message.user {
+  background: linear-gradient(180deg, var(--user-bg) 0%, #ffffff 100%);
+}
+
+.message.assistant {
+  background: linear-gradient(180deg, var(--assistant-bg) 0%, #ffffff 100%);
+}
+
+.message.system {
+  background: linear-gradient(180deg, var(--system-bg) 0%, #ffffff 100%);
+}
+
+.message.tool {
+  background: linear-gradient(180deg, var(--tool-bg) 0%, #ffffff 100%);
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.role-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(16, 32, 58, 0.08);
+  font-weight: 700;
+}
+
+.message-index,
+.message-extra {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.message-extra {
+  margin-left: auto;
+}
+
+.message-body p {
+  margin: 0 0 10px;
+  line-height: 1.75;
+  word-break: break-word;
+}
+
+.message-body p:last-child {
+  margin-bottom: 0;
+}
+
+.message-body pre {
+  margin: 10px 0 0;
+  padding: 14px;
+  border-radius: 14px;
+  overflow: auto;
+  background: #0f172a;
+  color: #dbeafe;
+  font: 13px/1.6 "Consolas", "Cascadia Code", monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-lang {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #bfdbfe;
+  font: 12px "Consolas", "Cascadia Code", monospace;
+  text-transform: lowercase;
+}
+
+.empty-state {
+  max-width: 720px;
+  margin: 80px auto;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--muted);
+  text-align: center;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .paper {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .message {
+    break-inside: avoid;
+  }
+}

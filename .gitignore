@@ -1,0 +1,11 @@
+.deps/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+output/
+tmp/
+
+browser-extension.zip
+preview_test.html
